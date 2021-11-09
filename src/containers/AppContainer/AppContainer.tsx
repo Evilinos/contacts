@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useActions } from '../../hooks/useActions'
 import { Header } from '../../components/Header'
 import { Redirect, Route, Switch } from 'react-router-dom'
@@ -8,7 +8,7 @@ import { Container } from '@mui/material'
 import ContactPage from '../../pages/ContactPage'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 
-export const AppContainer = () => {
+export const AppContainer: FC = () => {
   const {fetchContacts} = useActions()
   const {isLoading, error} = useTypedSelector(state => state.contacts)
   useEffect(() => {

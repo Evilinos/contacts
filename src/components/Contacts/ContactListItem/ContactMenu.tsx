@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import React, { ForwardRefExoticComponent, MouseEventHandler, RefAttributes } from 'react'
 import { IconButton, ListItemText, Menu, MenuItem } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 
@@ -9,14 +9,14 @@ const options = [
 
 const ITEM_HEIGHT = 48
 
-const ContactMenu = () => {
+const ContactMenu: ForwardRefExoticComponent<RefAttributes<HTMLDivElement>> = React.forwardRef((_, ref) => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
   const open = Boolean(anchorEl)
   const handleClick: MouseEventHandler<HTMLButtonElement> = event => setAnchorEl(event.currentTarget)
   const handleClose = () => setAnchorEl(null)
 
   return (
-    <ListItemText sx={{maxWidth: 40}}>
+    <ListItemText ref={ref} sx={{maxWidth: 40}}>
       <IconButton
         aria-label="more"
         id="long-button"
@@ -50,6 +50,6 @@ const ContactMenu = () => {
       </Menu>
     </ListItemText>
   )
-}
+})
 
 export default ContactMenu

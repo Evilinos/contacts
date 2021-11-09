@@ -1,9 +1,9 @@
-export interface Contact {
+export interface IContact {
   id: string;
-  lastname: string;
   firstname: string;
-  middlename: string;
+  lastname?: string;
+  middlename?: string;
   avatar: string;
-  email: string;
+  email?: string;
   phone: string
 }

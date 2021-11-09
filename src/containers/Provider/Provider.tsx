@@ -8,14 +8,10 @@ interface IProps {
   history: any
 }
 
-const Provider: FC<IProps> = ({children, store, history}) => {
-  return (
-    <ReduxProvider store={store}>
-      <ConnectedRouter history={history}>
-        {children}
-      </ConnectedRouter>
-    </ReduxProvider>
-  )
-}
-
-export default Provider
+export const Provider: FC<IProps> = ({children, store, history}) => (
+  <ReduxProvider store={store}>
+    <ConnectedRouter history={history}>
+      {children}
+    </ConnectedRouter>
+  </ReduxProvider>
+)

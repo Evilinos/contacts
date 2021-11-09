@@ -1,14 +1,10 @@
-import React from 'react'
-import MainPage from '../pages/MainPage'
-import { store, history } from '../store'
-import Provider from './Provider'
+import React, { FC } from 'react'
+import { history, store } from '../../store'
+import { Provider } from '../Provider'
+import { AppContainer } from '../AppContainer'
 
-const App = () => {
-  return (
-    <Provider store={store} history={history}>
-      <MainPage />
-    </Provider>
-  )
-}
-
-export default App
+export const App: FC = () => (
+  <Provider store={store} history={history}>
+    <AppContainer />
+  </Provider>
+)

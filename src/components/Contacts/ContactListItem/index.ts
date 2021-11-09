@@ -1,1 +1,1 @@
-export * from './ContactListItem'
+export {ContactListItemMemoized as ContactListItem} from './ContactListItem'
