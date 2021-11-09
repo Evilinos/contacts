@@ -1,0 +1,9 @@
+.listItem {
+  &:not(:last-child) {
+    border-bottom: 1px solid lightgrey;
+  }
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.20);
+    cursor: pointer;
+  }
+}
